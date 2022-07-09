@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dac52e03-f54c-4732-9d15-19fb68d3641c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tgl2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     barangmasuk.`namakaryawan` AS barangmasuk_namakaryawan,
+     barangmasuk.`kd_masuk` AS barangmasuk_kd_masuk,
+     barangmasuk.`kd_barang` AS barangmasuk_kd_barang,
+     barangmasuk.`nama_barang` AS barangmasuk_nama_barang,
+     barangmasuk.`tanggal` AS barangmasuk_tanggal,
+     barangmasuk.`jenis` AS barangmasuk_jenis,
+     barangmasuk.`ukuran` AS barangmasuk_ukuran,
+     barangmasuk.`harga` AS barangmasuk_harga,
+     barangmasuk.`jumlah` AS barangmasuk_jumlah
+FROM
+     `barangmasuk` barangmasuk
+
+where barangmasuk.`tanggal` between $P{tgl1} and 
+$P{tgl2}]]>
+	</queryString>
+	<field name="namakaryawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_masuk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ukuran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="barangmasuk_namakaryawan" class="java.lang.String"/>
+	<field name="barangmasuk_kd_masuk" class="java.lang.String"/>
+	<field name="barangmasuk_kd_barang" class="java.lang.String"/>
+	<field name="barangmasuk_nama_barang" class="java.lang.String"/>
+	<field name="barangmasuk_tanggal" class="java.sql.Date"/>
+	<field name="barangmasuk_jenis" class="java.lang.String"/>
+	<field name="barangmasuk_ukuran" class="java.lang.String"/>
+	<field name="barangmasuk_harga" class="java.lang.Integer"/>
+	<field name="barangmasuk_jumlah" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="109" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d795fb28-5396-40db-bc4f-e265711acc17" x="340" y="38" width="149" height="21"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PT. Bintang Global Abadi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aedeeb1b-0b6c-41f3-8eb0-d91b1347fbca" x="265" y="9" width="300" height="29"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Barang Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d05ca5ce-9efb-4776-99bf-ac9a13641f12" x="237" y="60" width="380" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Jln. Wibawa Mukti II No 95, Gd.2, Lt.1  RT.003/06 Jatiluhur Jatiasih Bekasi]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="dfee737d-3aec-4c80-874d-41e1fbacc524" x="237" y="80" width="380" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement uuid="d7539c0f-573e-4cf4-bfe5-1819f92ca483" x="111" y="4" width="100" height="101"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="5f1780df-dcb4-4957-a79f-69e001046974" mode="Opaque" x="49" y="1" width="709" height="24" forecolor="#B89F7D" backcolor="#688A7A"/>
+				<staticText>
+					<reportElement uuid="5b59d952-028d-4140-af79-1d1cfb498dc6" x="617" y="3" width="92" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="12"/>
+					</textElement>
+					<text><![CDATA[Penerima]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement uuid="2604b565-3263-4cc5-b7aa-1746c69d10fb" x="49" y="4" width="89" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="482a3a79-5df3-485f-a81c-8fc7e395edad" x="138" y="3" width="81" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="11ddb568-f9fb-43cf-96f3-14238765fcd8" x="219" y="3" width="114" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="812f4e0c-26c1-4c32-a105-2ce754474e07" x="333" y="3" width="76" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="777ea4c4-07d5-45a8-9196-fb2e2a4ce2af" x="409" y="3" width="65" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8cae200d-8df7-4d65-8035-98ed2085e5fb" x="537" y="3" width="62" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cc56f48a-3533-4a72-9361-97f77a426afd" x="475" y="3" width="62" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf54d92b-85b6-489f-9bf6-981bcc7610db" x="599" y="3" width="67" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8cd7be25-d488-40c4-8ec1-b1bf87002842" x="49" y="0" width="89" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_kd_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="02a598dc-9c81-4e81-8737-8c1e1715c9c4" x="138" y="0" width="81" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_kd_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="616280d3-1370-410a-b951-aba33d37598e" x="219" y="0" width="114" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bde1c2c2-8662-4e9f-98d8-a0a606c1fe17" x="333" y="0" width="76" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMMMM yyyy",new java.util.Locale("id")).format$F{barangmasuk_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3891b3a3-3ce6-4474-bf53-90656c1a1f19" x="409" y="0" width="65" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="93f61117-ef7a-4163-bb6f-80e86d2fc9ba" x="537" y="0" width="62" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="53e0a1df-fac6-493e-89d0-d393985d0f38" x="475" y="0" width="62" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_ukuran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79e6653c-d8d8-41f9-8b7f-b3e36af84b09" x="599" y="0" width="67" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b76a998-1918-438f-b00b-89c262409590" x="666" y="0" width="92" height="20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#666666"/>
+					<topPen lineWidth="1.0" lineColor="#666666"/>
+					<leftPen lineWidth="1.0" lineColor="#666666"/>
+					<bottomPen lineWidth="1.0" lineColor="#666666"/>
+					<rightPen lineWidth="1.0" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barangmasuk_namakaryawan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="129" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="493a5eb2-7657-40b4-a432-02dee67d0733" x="599" y="0" width="150" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Bekasi, "+new SimpleDateFormat("EEEEE dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f8fda284-b672-40c6-99e0-b23dc6202158" x="638" y="108" width="111" height="20"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Mr. Kim Song An]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="385bb1d3-758f-40ed-be4a-864e4fe1e521" x="638" y="20" width="111" height="20"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Manager]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch"/>
+	</summary>
+</jasperReport>
